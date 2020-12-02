@@ -8,22 +8,15 @@
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
     <meta http-equiv="x-ua-compatible" content="ie=edge" />
-
-    <!-- Bootstrap CSS -->
-    <link
-      rel="stylesheet"
-      href="node_modules/bootstrap/dist/css/bootstrap.min.css"
-    />
-    <link rel="stylesheet" href="css/styles.css" />
+    
+<!-- build:css css/main.css -->
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="node_modules/bootstrap-social/bootstrap-social.css">
+    <link href="css/styles.css" rel="stylesheet">
     <link rel="stylesheet" href="css/dist/styles.css" />
-    <link
-      rel="stylesheet"
-      href="node_modules/font-awesome/css/font-awesome.min.css"
-    />
-    <link
-      rel="stylesheet"
-      href="node_modules/bootstrap-social/bootstrap-social.css"
-    />
+    <!-- endbuild -->
+    
     <title>Ristorante Con Fusion</title>
   </head>
 
@@ -506,52 +499,11 @@
         </div>
       </div>
     </footer>
-    <!-- jQuery first, then Popper.js, then Bootstrap JS. -->
+<!-- build:js js/main.js -->
     <script src="node_modules/jquery/dist/jquery.slim.min.js"></script>
     <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
     <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-
-        <script>
-        $(document).ready(function(){
-            $("#mycarousel").carousel( { interval: 2000 } );
-               $("#carouselButton").click(function(){
-                if ($("#carousel-button-icon").hasClass("fa-pause")) {
-                    $("#mycarousel").carousel("pause");
-                    $("#carousel-button-icon").removeClass("fa-pause");
-                    $("#carousel-button-icon").addClass("fa-play");
-                }
-                else if ($("#carousel-button-icon").hasClass("fa-play")){
-                    $("#mycarousel").carousel("cycle");
-                    $("#carousel-button-icon").removeClass("fa-play");
-                    $("#carousel-button-icon").addClass("fa-pause");                  
-                }
-            });
-
-            $("#loginModalButton").click(function(){
-              $("#loginModal").modal("toggle");
-            });
-
-            $("#close1").click(function(){
-              $("#loginModal").modal("hide");
-            });
-
-            $("#reserveButton").click(function(){
-              $("#reserveModal").modal("toggle");
-            });
-
-            $("#close2").click(function(){
-              $("#reserveModal").modal("hide");
-            });
-
-            $("#cancelButton").click(function(){
-              $("#reserveModal").modal("hide");
-            });
-            // $("#carousel-play").click(function(){
-            //     $("#mycarousel").carousel('cycle');
-            // });
-        });
-                
-    </script>
-
+    <script src="js/scripts.js"></script>
+    <!-- endbuild -->
   </body>
 </html>
