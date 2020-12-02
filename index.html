@@ -15,6 +15,7 @@
       href="node_modules/bootstrap/dist/css/bootstrap.min.css"
     />
     <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="css/dist/styles.css" />
     <link
       rel="stylesheet"
       href="node_modules/font-awesome/css/font-awesome.min.css"
@@ -64,7 +65,7 @@
             </li>
           </ul>
           <span class="navbar-text">
-            <a data-toggle="modal" data-target="#loginModal">
+            <a id="loginModalButton">
               <span class="fa fa-sign-in"></span> Login</a
             >
           </span>
@@ -77,7 +78,7 @@
         <div class="modal-content">
           <div class="modal-header">
             <h4 class="modal-title">Login</h4>
-            <button type="button" class="close" data-dismiss="modal">
+            <button type="button" class="close" id="close1">
               &times;
             </button>
           </div>
@@ -117,13 +118,12 @@
                   </div>
                 </div>
                 </div>
-              </div>
-              <div class="form-row">
+              
+              <div class="form-row" id="loginCancel">
                 <div class="offset-sm-5">
                 <button
                   type="button"
                   class="btn btn-secondary btn-sm ml-auto"
-                  data-dismiss="modal"
                 >
                   Cancel
                 </button>
@@ -133,6 +133,7 @@
                 </div>
               </div>
             </form>
+            </div>
           </div>
         </div>
       </div>
@@ -155,8 +156,7 @@
             <a
               role="button"
               class="btn btn-block nav-link btn-warning"
-              data-toggle="modal"
-              data-target="#reserveModal"
+              id="reserveButton"
               >Reserve Table</a
             >
           </div>
@@ -170,7 +170,7 @@
         <div class="modal-content">
           <div class="modal-header">
             <h4 class="modal-title">Login</h4>
-            <button type="button" class="close" data-dismiss="modal">
+            <button type="button" class="close" id="close2">
               &times;
             </button>
           </div>
@@ -277,7 +277,7 @@
                 <button
                   type="button"
                   class="btn btn-secondary btn-sm ml-auto"
-                  data-dismiss="modal"
+                  id="cancelButton"
                 >
                   Cancel
                 </button>
@@ -525,6 +525,26 @@
                     $("#carousel-button-icon").removeClass("fa-play");
                     $("#carousel-button-icon").addClass("fa-pause");                  
                 }
+            });
+
+            $("#loginModalButton").click(function(){
+              $("#loginModal").modal("toggle");
+            });
+
+            $("#close1").click(function(){
+              $("#loginModal").modal("hide");
+            });
+
+            $("#reserveButton").click(function(){
+              $("#reserveModal").modal("toggle");
+            });
+
+            $("#close2").click(function(){
+              $("#reserveModal").modal("hide");
+            });
+
+            $("#cancelButton").click(function(){
+              $("#reserveModal").modal("hide");
             });
             // $("#carousel-play").click(function(){
             //     $("#mycarousel").carousel('cycle');
